@@ -4,6 +4,14 @@
 **License:** MIT  
 **Version:** 0.1.1
 
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Platform](https://img.shields.io/badge/Platform-Cross--platform-lightgrey)
+![Localization](https://img.shields.io/badge/Localization-Self--Healing-orange)
+
+
 ---
 
 ## 🌍 Overview
@@ -194,3 +202,7 @@ With SHLL, any project can become multilingual — automatically, reliably, and 
 No more incomplete language packs.  
 Localization that heals itself.**
 
+
+localization • i18n • l10n • self-healing • translation • multilingual  
+json • python • developer-tools • automation • templates • cli  
+ai-assisted • language-files • internationalization • localization-engine
