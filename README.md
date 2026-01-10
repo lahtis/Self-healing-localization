@@ -2,7 +2,7 @@
 ### Automatic, self‑maintaining localization for any Python project  
 **Author:** Tuomas Lähteenmäki  
 **License:** MIT  
-**Version:** 0.1
+**Version:** 0.1.1
 
 ---
 
@@ -193,3 +193,4 @@ With SHLL, any project can become multilingual — automatically, reliably, and 
 **No more missing translations.  
 No more incomplete language packs.  
 Localization that heals itself.**
+
