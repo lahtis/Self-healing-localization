@@ -60,6 +60,7 @@ To install the latest version:
 ```bash
 pip install self-healing-localization
 ```
+
 Basic usage:
 ```bash
 from shl.engine import LocalizationEngine
@@ -75,4 +76,5 @@ Feedback, ideas, and contributions are warmly welcome.
 
 Repository:
 https://github.com/lahtis/Self-healing-localization
+
 
