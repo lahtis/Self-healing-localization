@@ -16,10 +16,11 @@ class LocalizationEngine:
 ```
 
 ## Parameters
+| Name          | Type | Default   | Description                                   |
+|---------------|------|-----------|-----------------------------------------------|
+| locales_path  | str  | "locales" | Directory containing all localization files.  |
+| base_language | str  | "en"      | The primary language used for fallbacks.      |
 
-Name	Type	Default	Description
-locales_path	str	"locales"	Directory containing all localization files.
-base_language	str	"en"	The primary language used for fallbacks.
 
 ---
 
@@ -139,5 +140,6 @@ The LocalizationEngine provides:
 * safe access to translations
 * a clean API for integration
 It is the recommended entry point for all SHL‑based applications.
+
 
 
