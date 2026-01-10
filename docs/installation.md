@@ -1,6 +1,6 @@
 # Installation
 
-The Self‑Healing Localization Layer (SHLL) can be installed using pip.  
+The Self‑Healing Localization Layer (SHL) can be installed using pip.  
 The package is currently available on TestPyPI for early testing.
 
 ---
@@ -30,12 +30,12 @@ Requirements
 * Works on Windows, Linux, and macOS
 
 Verifying the installation
-After installation, you can verify that SHLL works by importing the engine:
+After installation, you can verify that SHL works by importing the engine:
 ```bash
 from shl.engine import LocalizationEngine
 
 engine = LocalizationEngine()
-print("SHLL is installed and working.")
+print("SHL is installed and working.")
 ```
 ---
 
@@ -50,3 +50,4 @@ pip install --upgrade self-healing-localization
 pip uninstall self-healing-localization
 ```
 If you encounter any issues during installation, feel free to open an issue on GitHub
+
