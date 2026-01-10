@@ -1,3 +1,14 @@
+## Self‑Healing Localization ##
+* A new paradigm for open‑source localization.
+* This library eliminates missing translations forever by providing:
+* Automatic creation of missing language files
+* Automatic creation of missing keys
+* Fallback to a base language
+* Optional AI‑powered translation (with explicit user permission)
+* Support for both UI text and AI prompt templates
+* Never write localization files manually again.
+
+'''
 self-healing-localization/
 │
 ├─ src/
@@ -30,3 +41,4 @@ self-healing-localization/
 ├─ LICENSE
 ├─ pyproject.toml
 └─ setup.cfg
+'''
