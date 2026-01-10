@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "self-healing-localization"
-version = "0.1.0"
+version = "0.1.1"
 description = "A self-healing localization layer for Python applications, automatically creating missing language files and keys."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -45,7 +45,4 @@ Repository = "https://github.com/lahtis/Self-healing-localization"
 Issues = "https://github.com/lahtis/Self-healing-localization/issues"
 
 [tool.setuptools]
-package-dir = { "" = "shl" }
-
-[tool.setuptools.packages.find]
-where = ["shl"]
+packages = { find = { where = ["."] } }
