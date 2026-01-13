@@ -20,14 +20,19 @@ def ucr_to_blueprint(ucr_path: str | Path, output_path: str | Path):
     }
 
     for comp_id, comp_data in ucr.get("components", {}).items():
+        original_framework_map = comp_data.get("framework_map", {})
+        healer_map = original_framework_map.get("Healer")
+
+        framework_map = dict(original_framework_map)
+        framework_map.pop("Healer", None)
+
         bp_entry = {
             "type": comp_data.get("type"),
             "text_keys": comp_data.get("text_keys", {}),
-            "framework_map": comp_data.get("framework_map", {})
+            "framework_map": framework_map
         }
 
-        # Extract healer_key from framework_map["Healer"]
-        healer_map = comp_data.get("framework_map", {}).get("Healer")
+        # Extract healer_key
         if healer_map and "selector" in healer_map:
             bp_entry["healer_key"] = healer_map["selector"]
 

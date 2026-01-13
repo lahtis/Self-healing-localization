@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from dataclasses import asdict
 from shl.healer.healer_log import HealerLogEntry
 
 
@@ -24,6 +25,6 @@ class HealerLogger:
             self._write_to_file(entry)
 
     def _write_to_file(self, entry: HealerLogEntry):
-        data = entry.__dict__
+        data = asdict(entry)
         with open(self.logfile, "a", encoding="utf-8") as f:
             f.write(json.dumps(data, ensure_ascii=False) + "\n")

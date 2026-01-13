@@ -4,7 +4,8 @@
     "project": "SHL Demo",
     "description": "Universal Component Registry for demo form",
     "default_language": "fi",
-    "supported_languages": ["fi", "en"]
+    "supported_languages": ["fi", "en"],
+    "ucr_version": "0.1"
   },
 
   "components": {

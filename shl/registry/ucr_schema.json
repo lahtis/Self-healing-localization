@@ -2,11 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "SHL Universal Component Registry Schema",
   "type": "object",
-
-  "required": ["components"],
+  
+  "required": ["$schema_version", "components"],
+  
   "properties": {
+   "$schema_version": { 
+   "type": "string" 
+   },
+   
     "meta": {
-      "type": "object",
+      "type": "object",      
       "properties": {
         "project": { "type": "string" },
         "description": { "type": "string" },
@@ -23,6 +28,7 @@
       "patternProperties": {
         "^[a-zA-Z0-9_]+$": {
           "type": "object",
+          "additionalProperties": false,
           "required": ["type", "text_keys", "framework_map"],
           "properties": {
             "type": { "type": "string" },
@@ -30,6 +36,7 @@
 
             "text_keys": {
               "type": "object",
+               "minProperties": 1,
               "patternProperties": {
                 "^[a-zA-Z0-9_]+$": { "type": "string" }
               }

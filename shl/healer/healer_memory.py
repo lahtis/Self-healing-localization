@@ -64,5 +64,3 @@ class HealerMemory:
             data = json.load(f)
 
         return cls(**data)
-
-        return s / total if total > 0 else 0.5

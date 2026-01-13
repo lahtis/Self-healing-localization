@@ -1,12 +1,15 @@
 import json
 from pathlib import Path
-from jsonschema import validate, ValidationError
+from jsonschema import validate, ValidationError, SchemaError
 
 
-def validate_ucr(ucr_path: str | Path, schema_path: str | Path):
+def validate_ucr(ucr_path: str | Path, schema_path: str | Path) -> bool:
     """
     Validates a UCR JSON file against the UCR schema.
-    Raises ValidationError if invalid.
+
+    Raises:
+        ValidationError: if UCR data is invalid
+        RuntimeError: if the schema itself is invalid
     """
 
     ucr_path = Path(ucr_path)
@@ -23,6 +26,12 @@ def validate_ucr(ucr_path: str | Path, schema_path: str | Path):
         return True
 
     except ValidationError as e:
+        path = ".".join(str(p) for p in e.absolute_path) or "<root>"
         raise ValidationError(
-            f"UCR validation failed at {list(e.path)}: {e.message}"
-        )
+            f"UCR validation failed at '{path}': {e.message}"
+        ) from e
+
+    except SchemaError as e:
+        raise RuntimeError(
+            "UCR schema is invalid. This is a developer error."
+        ) from e

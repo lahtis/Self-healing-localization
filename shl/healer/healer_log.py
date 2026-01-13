@@ -9,4 +9,4 @@ class HealerLogEntry:
     new_key: str
     reason: str
     confidence: float
-    timestamp: str = datetime.now().isoformat()
+    timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
