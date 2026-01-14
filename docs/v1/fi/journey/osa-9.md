@@ -1,4 +1,4 @@
-# Osa 8 – Kerrosmallin selitys esimerkin kautta
+# Osa 9 – Kerrosmallin selitys esimerkin kautta
 
 Kerrosmalli on helpointa ymmärtää konkreettisen esimerkin kautta.  
 Tässä kuvataan, mitä tapahtuu, kun sovellus haluaa näyttää yksinkertaisen tekstikentän:
