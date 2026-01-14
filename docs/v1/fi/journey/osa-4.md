@@ -98,4 +98,3 @@ Se oli:
 - itseparantuva järjestelmä  
 - turvallinen AI‑rajapinta  
 - ja pohja tuleville UI‑frameworkeille
-- 
