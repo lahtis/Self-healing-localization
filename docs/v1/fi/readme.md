@@ -62,3 +62,33 @@ Prosessi noudattaa kaavaa: **Lookup → Diff → Heal Attempt → Resolution →
 `HealerStats`-komponentti tarjoaa näkyvyyden järjestelmän suorituskykyyn:
 - **Accuracy:** Onnistumisprosentti per heuristiikka.
 - **Selector Evolution:** Historia siitä, miten komponenttien selektorit ovat muuttuneet ja kehittyneet sovelluksen elinkaaren aikana.
+
+---
+
+# 6. SHL Documentation Tree (V1)
+
+```text
+docs/
+└── v1/
+    └── fi/
+        ├── README.md                 # Projektin visio ja johdanto
+        ├── SUMMARY.md                # Navigointi ja sisällysluettelo
+        ├── vocabulary.md             # Keskeinen sanasto
+        │
+        ├── architecture/             # Järjestelmän tekninen rakenne
+        │   ├── engine.md             # FormEngine & MiddlemanManager
+        │   ├── healer.md             # HealerEngine & Memory
+        │   ├── adapters.md           # UI Adapters & Tree Builders
+        │   ├── grammar_rules.md      # Kielioppisäännöt (Teoria)
+        │   ├── morphology_engine.md  # Normalisointi (Tekniikka)
+        │   └── middleman_logic.md    # Semanttinen datan käsittely
+        │
+        ├── data/                     # Skeemat ja tallennusmuodot
+        │   ├── ui_schema.md          # JSON-komponenttien määrittely
+        │   ├── localization.md       # JSON & .PO -logiikka
+        │   └── healer_data.md        # Lokien ja muistin arkistointi
+        │
+        └── research/                 # Tutkimus- ja testiskenaariot
+            ├── test_scenarios.md     # Käytännön testitapaukset
+            └── stats_analysis.md     # Suorituskykymittarit
+```
