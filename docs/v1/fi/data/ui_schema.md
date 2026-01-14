@@ -14,6 +14,8 @@ Skeematiedosto sijaitsee polussa `[shl/ui/schema/v1/ui_schema.json]`. Sen ylin t
 }
 ```
 
+---
+
 ## 2. Komponentin anatomia
 Jokainen komponentti koostuu neljästä pääalueesta:
 
@@ -39,6 +41,8 @@ Ohjaa järjestelmän sisäistä logiikkaa.
 * `supports_language_manager`: Määrittää, kulkeeko teksti kielimoottorin läpi.
 * `category`: Auttaa `Healer`-moottoria ryhmittelemään hakuja (esim. `input`, `action`, `selection`).
 
+---
+
 ## 3. Esimerkki: Käyttäjänimen määrittely
 Tässä on tyypillinen tekstisyötteen määrittely, joka hyödyntää `Middleman`-logiikkaa:
 
@@ -61,15 +65,55 @@ Tässä on tyypillinen tekstisyötteen määrittely, joka hyödyntää `Middlema
 }
 ```
 
+---
+
 ## 4. Skeeman rooli Healer-prosessissa
 Kun HealerEngine yrittää korjata rikkoutunutta käyttöliittymää, se käyttää tätä skeemaa referenssinä:
 * 1. Jos `ID`:tä ei löydy, `Heale`r katsoo skeemasta, mikä `shl_type` ja `class` komponentilla pitäisi olla.
 * 2. Se hakee `text_key`s-kohdan avaimet ja kysyy `LanguageManagerilta` niiden nykyiset käännökset.
 * 3. Näiden tietojen avulla `Healer` voi tunnistaa "kadonneen" komponentin ruudulta, vaikka sen tekninen `ID` olisi muuttunut.
+
+---
  
 ## 5. Parhaat käytännöt
 * 1. Pienet `ID`:t: Käytä selkeitä, kuvaavia ID-nimeämisiköitä (esim. `submit_btn` eikä `button1`).
 * 2. Kieliavainten nimeäminen: Käytä piste-notaatiota (`komponentti.kenttä`), jotta `.po` ja `.json` käännöstiedostot pysyvät järjestyksessä.
 * 3. Framework-testaus: Varmista aina, että lisätty `class` löytyy vastaavasta `UIAdapterista`.
+
+---
  
-     
+## 6. Virheiden hallinta ja validointi skeematasolla
+
+Jotta Healer ei tekisi vääriä korjauksia (False Positives), skeema sisältää sisäänrakennettuja suojamekanismeja. Nämä varmistavat, että itseparannus tapahtuu vain tiukkojen kriteerien puitteissa.
+
+### A. Tyypin pakottaminen (Type Integrity)
+Skeeman `shl_type` toimii ylimpänä suodattimena. 
+- **Sääntö:** Healer ei saa koskaan korvata `BUTTON`-tyyppistä komponenttia `TEXT_INPUT`-tyyppisellä, vaikka niiden teksti tai sijainti täsmäisi.
+- **Miksi:** Tämä estää kriittiset virheet, kuten syöttökentän sekoittamisen toimintopainikkeeseen.
+
+### B. Pakolliset attribuutit (Required Attributes)
+Jokaiselle `shl_type`-tyypille on määritelty minimivaatimukset:
+- `TEXT_INPUT` vaatii vähintään `label`- tai `placeholder`-avaimen.
+- `BUTTON` vaatii vähintään `label`-avaimen.
+- Jos skeemasta puuttuu vaadittu avain, `SHLComponent`-olio heittää virheen jo latausvaiheessa, estäen viallisen UI:n rakentamisen.
+
+### C. Fallback-logiikka (Suojatut arvot)
+Jos Healer ei löydä 100 % vastaavuutta, skeema tukee fallback-määrityksiä:
+1. **Oletusarvo:** Jos kieliavainta ei löydy, järjestelmä käyttää `metadata.default_text` -arvoa.
+2. **Kriittisyysluokitus:** `metadata.critical: true` ilmoittaa, että jos tätä komponenttia ei voida korjata automaattisesti 100 % varmuudella, järjestelmän on pysähdyttävä ja pyydettävä ihmisen apua (Human-in-the-loop).
+
+### D. Skeeman versiointi (Schema Versioning)
+Skeeman yläosassa oleva `"version": "1.0.0"` ei ole vain numero.
+- Jos `FormEngine` havaitsee, että skeema on versiota 2.x, mutta adapterit tukevat vain 1.x-versiota, järjestelmä estää ajon. 
+- Tämä varmistaa, ettei Healer yritä korjata asioita säännöillä, joita se ei enää ymmärrä.
+
+---
+
+## 7. Yhteenveto: Skeeman rooli laadunvarmistuksessa
+
+Skeema ei ole vain passiivinen lista komponentteja, vaan se on **aktiivinen säännöstö**. Se mahdollistaa:
+1. **Deterministisen itseparannuksen:** Korjaukset ovat ennakoitavia.
+2. **Turvallisen epäonnistumisen (Fail-safe):** Järjestelmä tietää, milloin se *ei tiedä* tarpeeksi korjauksen tekemiseen.
+3. **Auditointiketjun:** Jokainen virhe ja korjausyritys voidaan peilata suoraan skeeman vaatimuksiin.     
+
+---
