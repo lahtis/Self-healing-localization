@@ -1,6 +1,6 @@
 # Osa 5 – Tulevaisuuden visio
 
-SHL FRAMEwork on syntynyt käytännön tarpeesta, kasvanut kokeilujen kautta ja muotoutunut arkkitehtuuriksi, joka yhdistää semantiikan, modulaarisuuden ja itseparantuvuuden.  
+SHL framework on syntynyt käytännön tarpeesta, kasvanut kokeilujen kautta ja muotoutunut arkkitehtuuriksi, joka yhdistää semantiikan, modulaarisuuden ja itseparantuvuuden.  
 Tulevaisuus ei ole enää pelkkä tekninen roadmap, vaan kokonainen suunta, johon järjestelmä voi kehittyä.
 
 Tämä osa kuvaa SHL:n mahdollisen tulevaisuuden – ei lupauksina, vaan potentiaalina.
