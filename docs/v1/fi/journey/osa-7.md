@@ -105,5 +105,5 @@ Sen tarkoitus on kasvaa projektista kokonaiseksi tavaksi rakentaa käyttöliitty
 
 ---
 
-Nämä periaatteet muodostavat SHL FRAMEworkin ytimen.  
+Nämä periaatteet muodostavat SHL frameworkin ytimen.  
 Ne ovat syntyneet käytännön tarpeista, mutta ne ohjaavat myös tulevaisuuden kehitystä.
