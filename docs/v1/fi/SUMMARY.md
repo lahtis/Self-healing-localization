@@ -18,6 +18,7 @@ Tämä on SHL (Semantic Healer Layer) -järjestelmän virallinen dokumentaatio v
 
 ## 🧠 Kielellinen äly
 * [Kielioppisäännöt](architecture/grammar_rules.md) — *Vokaalisointu ja normalisointi*
+* [Kielioppisäännöt](architecture/morphology_engine.md) — Kielioppisäännöt & Morfologinen normalisointi
 * [Middleman-logiikka](architecture/middleman_logic.md) — *Semanttinen datan käsittely*
 
 ## 🧪 Tutkimus ja Testaus
