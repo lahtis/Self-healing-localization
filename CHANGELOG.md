@@ -6,7 +6,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [0.1.0] - 2026-01-10
+## [0.2.0] — Unreleased
+> This version is available in the GitHub repository but has not yet been published to PyPI.
+
+### Added
+- New modular project structure with clear layer separation:
+  - core, registry, middleman, healer, adapters, ui_tree, diff, utils
+- UI Tree system:
+  - UINode model
+  - UITreeBuilder interface
+  - UITreePrinter debugging tool
+- UI Schema v1 (schema/v1) with component definitions
+- UI Components directory with component metadata and structure
+- Comprehensive documentation across the project:
+  - README for ui_tree, utils, schema/v1, components
+  - Core Concepts (What SHL is, diff vs patch vs heal, scoring model)
+  - Future extension roadmaps for multiple directories
+- Initial utils directory for shared helper modules
+- Project‑wide architectural descriptions and onboarding improvements
+
+### Changed
+- Reorganized repository layout for clarity and scalability
+- Updated documentation to reflect new architecture
+- Improved naming conventions and directory hierarchy
+- Clarified healer, diff and patch terminology and responsibilities
+
+### Removed
+- Legacy localization‑only structure from the original 0.1.0 release
+- Old engine‑based architecture in favor of layered model
+
+### Notes
+This version represents a major architectural evolution of SHL.
+The system now focuses on a deterministic, layered self‑healing model
+instead of the earlier file‑based localization engine.
+
+---
+
+## [0.1.1] - 2026-01-10
 ### Added
 - Initial release of the **Self‑Healing Localization Layer (SHLL)**.
 - `localizer.py`:  
@@ -32,10 +68,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - AI‑powered translation is planned for **v0.2**.  
 - CLI tooling and Localization Studio are planned for future releases.
 
----
-
-## [Unreleased]
-### Planned
+### [Unreleased]
+#### Planned
 - AI‑powered translation module (Gemini / Groq / OpenAI).  
 - CLI tool (`selfheal sync`, `selfheal translate`).  
 - Automatic detection of missing keys across all languages.  
@@ -43,3 +77,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Visual diffing of translations.  
 - Export/import of language packs.  
 - Framework integrations (Flask, FastAPI, Django, Flet).  
+
+---
