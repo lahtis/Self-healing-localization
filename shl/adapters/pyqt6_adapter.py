@@ -1,3 +1,15 @@
+"""
+File: pyqt6_adapter.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+PyQt6 UI adapter for SHL: creates PyQt6 widgets from SHLComponent definitions, 
+applies localized texts, and refreshes them on language change.
+
+PyQt6‑UI‑adapteri SHL:lle: luo PyQt6‑widgetit SHLComponent‑määrittelyistä, 
+asettaa lokalisoidut tekstit ja päivittää ne kielen vaihtuessa.
+"""
 from PyQt6 import QtWidgets
 from shl.adapters.base import UIAdapter
 
@@ -58,3 +70,4 @@ class PyQt6Adapter(UIAdapter):
         Reapply all localized texts to the widget.
         """
         self.apply_localization(widget, component)
+
