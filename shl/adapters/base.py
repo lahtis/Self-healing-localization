@@ -1,3 +1,15 @@
+"""
+File: base.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Abstract base class for SHL UI adapters: defines widget creation, 
+text application, and localization refresh logic.
+
+“SHL:n UI‑adapterien abstrakti pohjaluokka: määrittelee widgetin luonnin, 
+tekstien asettamisen ja lokalisaation päivityksen.
+"""
 from abc import ABC, abstractmethod
 
 class UIAdapter(ABC):
@@ -52,3 +64,4 @@ class UIAdapter(ABC):
 
         for field_name, text in texts.items():
             self.set_text(widget, component, field_name, text)
+
