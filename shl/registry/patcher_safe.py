@@ -1,3 +1,17 @@
+"""
+File: patcher_safe.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Safe blueprint patcher: applies changes to a UI blueprint only when their confidence meets the minimum threshold.
+Allows component additions and field‑level modifications but blocks component removals. 
+Returns both the patched blueprint and a report of applied and skipped changes.
+
+Turvallinen blueprint‑patcher: soveltaa muutoksia UI‑blueprinttiin vain, jos niiden luottamus ylittää minimiarvon. 
+Sallii komponenttien lisäämisen ja kenttätason muutokset, mutta estää komponenttien poistot. 
+Palauttaa sekä päivitetyn blueprintin että raportin hyväksytyistä ja ohitetuista muutoksista.
+"""
 from copy import deepcopy
 from typing import Any, Dict, List
 
@@ -86,3 +100,4 @@ def _apply_field_change(
         target.pop(last, None)
 
     return True
+
