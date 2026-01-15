@@ -1,3 +1,15 @@
+"""
+File: healer_stats.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Statistics component for the healing system: loads HealerMemory, computes success rates for text,
+type, and context matching, and prints a summary along with recent selector evolution history.
+
+Healing‑järjestelmän tilastointikomponentti: lukee HealerMemoryn, laskee tekstin, tyypin ja kontekstin
+onnistumisprosentit ja tulostaa yhteenvedon sekä selector‑historian kehityksen.
+"""
 from pathlib import Path
 from shl.healer.healer_memory import HealerMemory
 
@@ -43,3 +55,4 @@ class HealerStats:
                 print(f"  - {sel}")
 
         print("\n========================\n")
+
