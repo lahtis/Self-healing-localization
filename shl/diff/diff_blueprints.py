@@ -1,3 +1,15 @@
+"""
+File: diff_blueprints.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Compares two SHL blueprints and produces a list of component additions, 
+removals, and field modifications as BlueprintChange objects.
+
+Vertaa kahta SHL‑blueprinttia ja tuottaa listan komponenttien lisäys‑, 
+poisto‑ ja kenttämuutoksista BlueprintChange‑olioina.
+"""
 from typing import Any, Dict, List
 from shl.diff.blueprint_change import (
     BlueprintChange,
@@ -153,3 +165,4 @@ def _diff_dict(
                     confidence=conf,
                 )
             )
+
