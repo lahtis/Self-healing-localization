@@ -1,3 +1,17 @@
+"""
+File: SHLComponent.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+SHL component model: loads the UI schema, locates the component definition, and exposes a unified interface 
+for text keys, framework‑specific implementations, and metadata. Serves as the fundamental UI unit connecting 
+schema, adapters, and middleman logic
+
+SHL‑komponenttimalli: lataa UI‑skeeman, etsii komponentin määritelmän ja tarjoaa yhtenäisen rajapinnan komponentin
+tekstikentille, framework‑kohtaisille toteutuksille ja metatiedoille. Toimii UI‑kerroksen perusyksikkönä ja 
+yhdistää skeeman, adapterit ja middleman‑logiikan.
+"""
 import json
 import os
 
@@ -61,3 +75,4 @@ class SHLComponent:
 
     def __repr__(self):
         return f"<SHLComponent id='{self.component_id}' type='{self.shl_type}'>"
+
