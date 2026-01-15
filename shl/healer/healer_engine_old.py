@@ -1,3 +1,15 @@
+"""
+File: healer_engine_old.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+The original SHL healing engine: a simple text‑ and type‑based matcher that served as the 
+foundation for the current heuristic and memory‑driven healing system. Preserved for historical reference.
+
+SHL:n alkuperäinen healing‑moottori: yksinkertainen tekstin ja tyypin perusteella toimiva matcher, joka
+toimi pohjana nykyiselle heuristiikka‑ ja muistipohjaiselle healing‑järjestelmälle. Säilytetään historiallisista syistä.
+"""
 from shl.healer.healer_logger import HealerLogger
 from shl.healer.healer_log import HealerLogEntry
 from shl.ui_tree.ui_tree_printer import UITreePrinter
@@ -99,3 +111,4 @@ class HealerEngine:
             return new_key
 
         return None
+
