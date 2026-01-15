@@ -65,7 +65,7 @@ instead of the earlier file‑based localization engine.
 
 ### Notes
 - This version focuses on core functionality and stability.  
-- AI‑powered translation is planned for **v0.2**.  
+- AI‑powered translation is planned for **v0.3**.  
 - CLI tooling and Localization Studio are planned for future releases.
 
 ### [Unreleased]
@@ -78,4 +78,9 @@ instead of the earlier file‑based localization engine.
 - Export/import of language packs.  
 - Framework integrations (Flask, FastAPI, Django, Flet).  
 
+---
+
+## [0.1.0] — Initial Release
+- The initial release version. The structure existed, but the system was still clearly incomplete and partially broken.
+  
 ---
