@@ -1,3 +1,15 @@
+"""
+File: flet_adapter.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Flet UI adapter for SHL: creates Flet widgets from SHLComponent objects, 
+applies values, and updates localization through the framework‑agnostic interface.
+
+“Flet‑UI‑adapteri SHL:lle: luo Flet‑widgetit SHLComponent‑olioista,
+asettaa arvot ja päivittää lokalisaation framework‑agnostisen rajapinnan kautta.
+"""
 import flet as ft
 from shl.adapters.base import UIAdapter
 
@@ -67,3 +79,4 @@ class FletAdapter(UIAdapter):
     def refresh_widget(self, widget, component):
         self.apply_localization(widget, component)
         widget.update()
+
