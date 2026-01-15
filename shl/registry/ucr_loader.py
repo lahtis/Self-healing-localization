@@ -1,3 +1,16 @@
+"""
+File: ucr_loader.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+UCR registry loader: reads a Universal Component Registry file, validates it against the UCR schema, and constructs
+SHLComponent objects including text_keys, framework_map definitions, and optional data_binding configuration.
+
+UCR‑rekisterin latausmoduuli: lukee Universal Component Registry ‑tiedoston, validoi sen UCR‑skeemaa
+vasten ja rakentaa siitä SHLComponent‑oliot, mukaan lukien text_keys‑arvot, framework_map‑määritykset 
+ja mahdollisen data_binding‑konfiguraation.
+"""
 import json
 from pathlib import Path
 from shl.ui.components.SHLComponent import SHLComponent
@@ -38,3 +51,4 @@ def load_ucr(path: str | Path):
         components.append(component)
 
     return components
+
