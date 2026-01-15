@@ -1,3 +1,17 @@
+"""
+File: manager.py
+Author: Tuomas Lähteenmäki
+Version: 0.1
+License: MIT
+Description: 
+Management layer for Middleman instances: handles registration and selection of middleman
+objects based on SHLComponent compatibility and provides a unified interface for converting
+raw data to UI values and back into Python structures.
+
+Middleman‑instanssien hallintakerros: vastaa middleman‑olioiden rekisteröinnistä ja valinnasta
+SHL‑komponentin perusteella sekä tarjoaa yhtenäisen rajapinnan datan muuntamiseen
+UI‑arvoiksi ja takaisin Python‑rakenteiksi.
+"""
 from shl.middleman.base import Middleman
 
 class MiddlemanManager:
@@ -53,3 +67,4 @@ class MiddlemanManager:
         if middleman:
             return middleman.from_component_value(component, value)
         return value
+
