@@ -1,5 +1,5 @@
 # Self‑Healing Core Layer
-### Automatic, self‑maintaining code layer framwork
+### Automatic, self‑maintaining code layer framework
 **Author:** Tuomas Lähteenmäki  
 **License:** MIT  
 **Version:** 0.2.0
@@ -21,3 +21,4 @@ Self‑Healing Core Layer (SHC) is a lightweight, dependency‑free Python libra
 MIT License — free for personal and commercial use.
 
 ---
+
